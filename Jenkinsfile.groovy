@@ -34,20 +34,4 @@
       githubProjectUrl('https://github.com/daplenty/boot-react')
     }
 
-    configure { project ->
-      def scriptContainers = project / 'properties' / 'hudson.model.ParametersDefinitionProperty' / 'parameterDefinitions'
-      scriptContainers.each { org_level ->
-        def script_level = org_level / 'script'
-        script_level.appendNode('secureScript', [plugin: 'script-security@1.40']).with {
-          appendNode('sandbox', 'true')
-          appendNode('script', script_level.script.text())
-          script_level.remove(script_level / 'script')
-        }
-        script_level.appendNode('secureFallbackScript', [plugin: 'script-security@1.40']).with {
-          appendNode('sandbox', 'true')
-          appendNode('script', script_level.fallbackScript.text())
-          script_level.remove(script_level / 'fallbackScript')
-        }
-      }
-    }
   }
