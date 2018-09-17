@@ -1,12 +1,11 @@
 
+registerGitHooks("boot-react")
+
 pipelineJob("PipelineTest") {
 
     description("Master Pipeline job to Upload artifacts to Artifactory")
     logRotator(-1, 10, -1, 1)
     quietPeriod(1)
-
-    registerGitHooks("boot-react")
-
     definition {
       cpsScm {
         scm {
