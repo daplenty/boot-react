@@ -1,9 +1,12 @@
+@Library('shared@master') _
 
- Job("PipelineTest") {
+pipelineJob("PipelineTest") {
 
     description("Master Pipeline job to Upload artifacts to Artifactory")
     logRotator(-1, 10, -1, 1)
     quietPeriod(1)
+
+    registerGitHooks("boot-react")
 
     definition {
       cpsScm {
@@ -11,7 +14,7 @@
           git {
             remote {
               github("daplenty/boot-react", 'https')
-              credentials("githubpersonal")
+              credentials("GithubWKDAHTTPS")
               branch("master")
             }
             extensions {
@@ -19,7 +22,7 @@
             }
           }
         }
-        scriptPath("jenkins.gvy")
+        scriptPath("jobs/jenkins.gvy")
         lightweight()
       }
     }
