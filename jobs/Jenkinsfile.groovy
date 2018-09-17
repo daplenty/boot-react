@@ -1,4 +1,3 @@
-@Library('shared@master') _
 
 pipelineJob("PipelineTest") {
 
