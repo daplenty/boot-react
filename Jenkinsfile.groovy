@@ -5,24 +5,22 @@
     logRotator(-1, 10, -1, 1)
     quietPeriod(1)
 
-    scm {
-      git {
-        remote {
-          // Here to trigger on GitHub commit
-          github("daplenty/boot-react", 'https')
-          credentials("githubpersonal")
-          branch("master")
-        }
-        extensions {
-          wipeOutWorkspace()
-        }
-      }
-    }
-
     definition {
-      cps {
-        sandbox()
-        script(readFileFromWorkspace("jenkins.gvy"))
+      cpsScm {
+        scm {
+          git {
+            remote {
+              github("daplenty/boot-react", 'https')
+              credentials("githubpersonal")
+              branch("master")
+            }
+            extensions {
+              wipeOutWorkspace()
+            }
+          }
+        }
+        scriptPath("jenkins.gvy")
+        lightweight()
       }
     }
 
