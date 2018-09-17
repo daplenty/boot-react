@@ -21,6 +21,7 @@ import static org.springframework.security.test.web.servlet.setup.SecurityMockMv
 @ActiveProfiles("test")
 abstract class AbstractMvcSpec extends SpockMvcSpec {
 
+  // hidyf
   @Shared
   private def sessionRepository = new MapSessionRepository()
 
