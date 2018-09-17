@@ -1,5 +1,5 @@
 
-  pipelineJob("PipelineTest") {
+ Job("PipelineTest") {
 
     description("Master Pipeline job to Upload artifacts to Artifactory")
     logRotator(-1, 10, -1, 1)
