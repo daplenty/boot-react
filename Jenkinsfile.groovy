@@ -10,7 +10,7 @@
         remote {
           // Here to trigger on GitHub commit
           github("daplenty/boot-react", 'https')
-          credentials("github-ssh-rw-key")
+          credentials("githubpersonal")
           branch("master")
         }
         extensions {
@@ -25,6 +25,7 @@
         script(readFileFromWorkspace("jenkins.gvy"))
       }
     }
+
 
     triggers {
       githubPush()
