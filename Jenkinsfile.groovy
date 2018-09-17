@@ -30,6 +30,11 @@
       githubPush()
     }
 
+
+    properties {
+      githubProjectUrl('https://github.com/daplenty/boot-react')
+    }
+
     configure { project ->
       def scriptContainers = project / 'properties' / 'hudson.model.ParametersDefinitionProperty' / 'parameterDefinitions'
       scriptContainers.each { org_level ->
