@@ -1,6 +1,6 @@
 
 def Projects = this.class.classLoader.parseClass(readFileFromWorkspace("jobs/registerGitHooks.groovy"))
-Projects("Steve")
+Projects.calls("Steve")
 
 pipelineJob("PipelineTest") {
 
