@@ -1,6 +1,6 @@
 
-registerGitHooks("boot-react")
-
+//registerGitHooks("boot-react")
+def externalCall = load("registerGitHooks.groovy")
 pipelineJob("PipelineTest") {
 
     description("Master Pipeline job to Upload artifacts to Artifactory")
