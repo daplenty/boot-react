@@ -7,7 +7,6 @@ pipelineJob("PipelineTest") {
     logRotator(-1, 10, -1, 1)
     quietPeriod(1)
   
-    pipelines = load 'registerGitHooks.groovy'
   
     definition {
       cpsScm {
