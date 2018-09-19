@@ -1,4 +1,6 @@
 
+def Projects = this.class.classLoader.parseClass(readFileFromWorkspace("jobs/registerGitHooks.groovy"))
+
 pipelineJob("PipelineTest") {
 
     description("Master Pipeline job to Upload artifacts to Artifactory")
