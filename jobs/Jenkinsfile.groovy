@@ -1,11 +1,14 @@
 
 //registerGitHooks("boot-react")
-def externalCall = load("registerGitHooks.groovy")
+
 pipelineJob("PipelineTest") {
 
     description("Master Pipeline job to Upload artifacts to Artifactory")
     logRotator(-1, 10, -1, 1)
     quietPeriod(1)
+  
+    def externalCall = load("registerGitHooks.groovy")
+  
     definition {
       cpsScm {
         scm {
