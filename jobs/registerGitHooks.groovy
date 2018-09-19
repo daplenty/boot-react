@@ -1,6 +1,6 @@
 
-
-def call(String projectName) {
- println projectName
+class Projects {
+def static calls(String projectName) {
+   println projectName 
 }
 
