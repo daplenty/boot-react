@@ -1,11 +1,3 @@
-#!groovy
-
-import org.kohsuke.github.GHRepository
-import org.kohsuke.github.GitHub
-import jenkins.model.Jenkins
-import org.kohsuke.github.GHEvent
-import org.kohsuke.github.GHHook
-
 
 pipelineJob("PipelineTest") {
 
@@ -13,7 +5,7 @@ pipelineJob("PipelineTest") {
     logRotator(-1, 10, -1, 1)
     quietPeriod(1)
   
-   
+    pipelines = load 'registerGitHooks.groovy'
   
     definition {
       cpsScm {
