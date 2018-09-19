@@ -24,7 +24,7 @@ pipeline {
   stages {
     stage('Checkout Project') {
       steps {
-        sh "pwd"
+        echo "hi"
       }
     }
   }
