@@ -1,5 +1,5 @@
 
-//registerGitHooks("boot-react")
+def Projects = this.class.classLoader.parseClass(readFileFromWorkspace("jobs/registerGitHooks.groovy"))
 
 pipelineJob("PipelineTest") {
 
@@ -7,7 +7,7 @@ pipelineJob("PipelineTest") {
     logRotator(-1, 10, -1, 1)
     quietPeriod(1)
   
-    def externalCall = load("registerGitHooks.groovy")
+   
   
     definition {
       cpsScm {
