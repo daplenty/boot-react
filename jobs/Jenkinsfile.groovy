@@ -1,3 +1,5 @@
+#!groovy
+
 import org.kohsuke.github.GHRepository
 import org.kohsuke.github.GitHub
 import jenkins.model.Jenkins
